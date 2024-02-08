@@ -21,4 +21,15 @@ public class JobServiceImpl implements JobService {
         job.setId(nextId++); // if no ID is present then it will add ID based on json data object
         jobs.add(job);
     }
+
+    @Override
+    public Job getJobById(Long id) {
+//        foreach loop
+        for(Job job : jobs){
+            if(job.getId().equals(id)){
+                return job;
+            }
+        }
+        return null;
+    }
 }
